@@ -3,22 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arrdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marrow <marrow@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marrow <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/14 20:25:31 by marrow            #+#    #+#             */
-/*   Updated: 2020/10/14 21:34:26 by marrow           ###   ########.fr       */
+/*   Created: 2020/10/18 19:59:44 by marrow            #+#    #+#             */
+/*   Updated: 2020/10/20 03:50:16 by marrow           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_sdel(void ***arr)
+void			ft_arrdel(void ***arr)
 {
-	if (!(arr))
+	void	**temp;
+
+	if (!(*arr))
 		return ;
+	temp = *arr;
 	while (**arr)
 	{
-		ft_strdel((char **)*arr);
+		ft_memdel(*arr);
 		(*arr)++;
 	}
+	free(temp);
+	temp = NULL;
+	*arr = temp;
 }
