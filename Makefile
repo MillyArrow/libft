@@ -109,7 +109,10 @@ SRC_LIBFT = \
 		get_next_line.c \
 		ft_number_length.c \
 		ft_putnbrll.c \
-		ft_get_number.c
+		ft_get_number.c \
+		ft_arrdel.c \
+		ft_isnumber.c \
+		ft_isint.c
 
 # PRINTF
 
@@ -148,7 +151,7 @@ OBJS_PRINTF = $(addprefix $(DIR_OBJ_PRINTF), $(SRC_PRINTF:.c=.o))
 
 .PHONY: all clean fclean re
 
-all: $(NAME)
+all: $(OBJS_LIBFT) $(OBJS_PRINTF) $(NAME)
 
 $(NAME): $(SRCS_LIBFT) $(OBJS_LIBFT) $(SRCS_PRINTF) $(OBJS_PRINTF) $(HEADERS)
 	@ar rcs $(NAME) $(OBJS_LIBFT) $(OBJS_PRINTF)

@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnumber.c                                      :+:      :+:    :+:   */
+/*   ft_arrdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marrow <marrow@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/24 02:56:18 by marrow            #+#    #+#             */
-/*   Updated: 2020/10/30 16:48:39 by marrow           ###   ########.fr       */
+/*   Created: 2020/10/18 19:59:44 by marrow            #+#    #+#             */
+/*   Updated: 2020/10/30 16:49:13 by marrow           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isnumber(char *s)
+void			ft_arrdel(void ***arr)
 {
-	int i;
+	void	**temp;
 
-	i = 0;
-	if (!s || !*s)
-		return (FALSE);
-	while (s[i])
+	if (!(*arr))
+		return ;
+	temp = *arr;
+	while (**arr)
 	{
-		if (s[i] == '-' || s[i] == '+')
-		{
-			if (i == 0 && s[++i])
-				;
-			else
-				return (FALSE);
-		}
-		if (!ft_isdigit(s[i]))
-			return (FALSE);
-		++i;
+		ft_memdel(*arr);
+		(*arr)++;
 	}
-	return (TRUE);
+	free(temp);
+	temp = NULL;
+	*arr = temp;
 }
