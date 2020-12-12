@@ -6,7 +6,7 @@
 #    By: marrow <marrow@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/05 21:44:43 by marrow            #+#    #+#              #
-#    Updated: 2020/10/14 21:34:50 by marrow           ###   ########.fr        #
+#    Updated: 2020/12/12 18:53:12 by marrow           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -137,7 +137,8 @@ SRC_PRINTF = \
 		ft_type.c \
 		ft_u.c \
 		ft_width.c \
-		ft_x.c
+		ft_x.c \
+		ft_fprintf.c
 
 # FILE PATH TO LIBFT SRC/OBJ FILES
 

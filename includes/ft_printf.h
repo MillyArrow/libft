@@ -6,7 +6,7 @@
 /*   By: marrow <marrow@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/09 20:35:53 by marrow            #+#    #+#             */
-/*   Updated: 2020/10/20 06:34:02 by marrow           ###   ########.fr       */
+/*   Updated: 2020/12/12 18:47:34 by marrow           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,24 @@
 
 typedef struct		s_spec
 {
-	char			flag[5];
+	__uint128_t		int_part;
 	size_t			width;
+	size_t			len;
+	size_t			len_f;
+	size_t			l_int_part;
+	size_t			l_int_par;
+	int				fd;
+	int				iszero;
+	int				inf_nan;
+	int				plus;
 	int				accuracy;
+	bool			fprintf_flag;
+	char			color[8];
+	char			flag[5];
 	char			length[3];
 	char			type;
 	char			minus;
-	int				iszero;
-	size_t			len;
-	size_t			len_f;
-	int				inf_nan;
-	int				plus;
-	__uint128_t		int_part;
-	size_t			l_int_part;
 	char			chk;
-	char			color[8];
 }					t_spec;
 void				ft_putch(char c, t_spec *spec);
 void				initialization(t_spec *specifier);
@@ -114,4 +117,5 @@ void				print_width_f(t_spec *specifier);
 void				ft_width_f(t_spec *specifier);
 void				ft_e(t_spec *specifier, va_list args);
 int					ft_setcolor(char *str, size_t *i, t_spec *specifier);
+int					ft_fprintf(const int fd, const char *restrict format, ...);
 #endif

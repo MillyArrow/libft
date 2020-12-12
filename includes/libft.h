@@ -6,7 +6,7 @@
 /*   By: marrow <marrow@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 03:46:46 by marrow            #+#    #+#             */
-/*   Updated: 2020/10/14 21:34:43 by marrow           ###   ########.fr       */
+/*   Updated: 2020/12/12 18:12:00 by marrow           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <stdbool.h>
 
 typedef struct	s_list
 {
